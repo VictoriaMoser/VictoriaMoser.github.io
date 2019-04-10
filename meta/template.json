@@ -1,0 +1,310 @@
+{
+    "id": "4342",
+    "name": "Telesummit Template",
+    "mobile": true,
+    "notes": "(Incremented to 1.02) Added builder detection code to remedy Chrome related text edit bug in FAQs. Reduced column centered column spacing by 1px for IE9 render.",
+    "syntax": 4,
+    "version": 1.02,
+    "style": {
+        "replacements": [
+            {"type": "font", "name": "Font #1", "find": "'PT Serif'"},
+            {"type": "font", "name": "Font #2", "find": "'Roboto'"},
+
+            {"type": "color", "find": "#1a1919", "name": "General Text"},
+            {"type": "color", "find": "#e6313f", "name": "Accent Color"},
+            {"type": "color", "find": "#f75662", "name": "Button/Link Hover"},
+            {"type": "color", "find": "#2b333e", "name": "Dark Button"},
+            {"type": "color", "find": "#4a5463", "name": "Dark Button Hover"},
+            {"type": "color", "find": "#fcfdfd", "name": "White Button"},
+            {"type": "color", "find": "#ededed", "name": "White Button Hover"},
+            {"type": "color", "find": "#feffff", "name": "Button Text"},
+            {"type": "color", "find": "#fffffe", "name": "Header Background"},
+            {"type": "color", "find": "#cdcccc", "name": "Banner Background (No Image)"},
+            {"type": "color", "find": "#fffeff", "name": "Banner Text"},
+            {"type": "color", "find": "#fefeff", "name": "About Background"},
+            {"type": "color", "find": "#2b333f", "name": "Speakers Background"},
+            {"type": "color", "find": "#fefffe", "name": "Speakers Text"},
+            {"type": "color", "find": "#fffefe", "name": "Agenda Background"},
+            {"type": "color", "find": "#f2f2f3", "name": "Venue Background"},
+            {"type": "color", "find": "#fefefd", "name": "Hotel Box Background"},
+            {"type": "color", "find": "#fefdfe", "name": "Sponsors Background"},
+            {"type": "color", "find": "#2b333d", "name": "Become Sponsor Background"},
+            {"type": "color", "find": "#fdfefe", "name": "Become Sponsor Text"},
+            {"type": "color", "find": "#fdfdfe", "name": "Registration/FAQ Background"},
+            {"type": "color", "find": "#f2f3f2", "name": "Price Background"},
+            {"type": "color", "find": "#2a333e", "name": "Price Text"},
+            {"type": "color", "find": "#e1e1e2", "name": "Option List Lines"},
+            {"type": "color", "find": "#2b323e", "name": "Option #1 Main"},
+            {"type": "color", "find": "#232831", "name": "Option #1 Header"},
+            {"type": "color", "find": "#4a5563", "name": "Option #1 Button Hover"},
+            {"type": "color", "find": "#d12f3b", "name": "Option #2 Header"},
+            {"type": "color", "find": "#2b343e", "name": "Option #3 Main"},
+            {"type": "color", "find": "#212831", "name": "Option #3 Header"},
+            {"type": "color", "find": "#4a5564", "name": "Option #3 Button Hover"},
+            {"type": "color", "find": "#dbdcdb", "name": "FAQ List Lines"},
+            {"type": "color", "find": "#f2f1f2", "name": "Footer Background"},
+            {"type": "color", "find": "#2b343d", "name": "Copyright Background"},
+            {"type": "color", "find": "#fdfcfd", "name": "Copyright Text"}
+        ]
+    },
+    "variables": {
+        "facebookShareURL": {
+          "variable": "facebookShareURL",
+          "dafault": "",
+          "name": "The URL to share on Facebook. Leave blank to share the current page."
+        },
+        "twitterShareURL": {
+          "variable": "twitterShareURL",
+          "dafault": "",
+          "name": "The URL to share on Twitter. Leave blank to share the current page."
+        },
+        "googleShareURL": {
+          "variable": "googleShareURL",
+          "dafault": "",
+          "name": "The URL to share on Google+. Leave blank to share the current page."
+        },
+        "linkedInShareURL": {
+          "variable": "linkedInShareURL",
+          "dafault": "",
+          "name": "The URL to share on LinkedIn. Leave blank to share the current page."
+        }
+    },
+    "elements": [
+        {"id": "header", "name": "Header", "type": "container"},
+        {"id": "logo", "type": "image-link", "name": "Logo", "data": { "max-width": 250 } },
+        {"id": "nav-link-1", "name": "Link 1 (#section1)", "type": "link"},
+        {"id": "nav-link-2", "name": "Link 2 (#section2)", "type": "link"},
+        {"id": "nav-link-3", "name": "Link 3 (#section3)", "type": "link"},
+        {"id": "nav-link-4", "name": "Link 4 (#section4)", "type": "link"},
+        {"id": "nav-link-5", "name": "Link 5 (#section5)", "type": "link"},
+        {"id": "nav-link-6", "name": "Link 6 (#section6)", "type": "link"},
+        {"id": "nav-link-7", "name": "Link 7 (#section7)", "type": "link"},
+        {"id": "header-btn", "name": "Button", "type": "link", "data": {"href": "#/optin"} },
+
+
+
+        {"id": "banner", "name": "Banner", "type": "container"},
+        {"id": "banner-bg", "name": "Banner Image", "type": "background-image"},
+        {"id": "banner-logo", "type": "image", "name": "Logo"},
+        {"id": "banner-lead", "name": "Lead", "type": "text"},
+        {"id": "banner-title", "name": "Title", "type": "text"},
+        {"id": "banner-text", "name": "Text", "type": "text"},
+        {"id": "countdown-timer", "name": "Countdown", "type": "countdown"},
+        {"id": "banner-btn", "name": "Button", "type": "link", "data": {"href": "#/optin"} },
+
+
+
+        {"id": "social", "name": "Social Media", "type": "container"},
+        {"id": "twitter", "type": "dynamic", "name": "Twitter Share", "data": { "variables": ["twitterShareURL"] } },
+        {"id": "facebook", "type": "dynamic", "name": "Facebook Share", "data": { "variables": ["facebookShareURL"] } },
+        {"id": "google", "type": "dynamic", "name": "Google+ Share", "data": { "variables": ["googleShareURL"] } },
+        {"id": "linkedin", "type": "dynamic", "name": "LinkedIn Share", "data": { "variables": ["linkedInShareURL"] } },
+
+
+
+        {"id": "about", "name": "About", "type": "container"},
+        {"id": "about-title", "name": "Title", "type": "text"},
+        {"id": "about-text", "name": "Text", "type": "text"},
+
+
+
+        {"id": "speakers", "name": "Speakers", "type": "container"},
+        {"id": "speakers-title", "name": "Title", "type": "text"},
+        {"id": "speakers-text-1", "name": "Text", "type": "text"},
+
+        {"id": "speaker-1", "name": "Speaker #1", "type": "container"},
+        {"id": "speaker-1-img", "type": "image", "name": "Image", "data": { "max-width": 263 } },
+        {"id": "speaker-1-name", "name": "Name", "type": "text"},
+        {"id": "speaker-1-title", "name": "Title", "type": "text"},
+        {"id": "speaker-1-company", "name": "Company", "type": "text"},
+
+        {"id": "speaker-2", "name": "Speaker #2", "type": "container"},
+        {"id": "speaker-2-img", "type": "image", "name": "Image", "data": { "max-width": 263 } },
+        {"id": "speaker-2-name", "name": "Name", "type": "text"},
+        {"id": "speaker-2-title", "name": "Title", "type": "text"},
+        {"id": "speaker-2-company", "name": "Company", "type": "text"},
+
+        {"id": "speaker-3", "name": "Speaker #3", "type": "container"},
+        {"id": "speaker-3-img", "type": "image", "name": "Image", "data": { "max-width": 263 } },
+        {"id": "speaker-3-name", "name": "Name", "type": "text"},
+        {"id": "speaker-3-title", "name": "Title", "type": "text"},
+        {"id": "speaker-3-company", "name": "Company", "type": "text"},
+
+        {"id": "speaker-4", "name": "Speaker #4", "type": "container"},
+        {"id": "speaker-4-img", "type": "image", "name": "Image", "data": { "max-width": 263 } },
+        {"id": "speaker-4-name", "name": "Name", "type": "text"},
+        {"id": "speaker-4-title", "name": "Title", "type": "text"},
+        {"id": "speaker-4-company", "name": "Company", "type": "text"},
+
+        {"id": "speaker-5", "name": "Speaker #5", "type": "container"},
+        {"id": "speaker-5-img", "type": "image", "name": "Image", "data": { "max-width": 263 } },
+        {"id": "speaker-5-name", "name": "Name", "type": "text"},
+        {"id": "speaker-5-title", "name": "Title", "type": "text"},
+        {"id": "speaker-5-company", "name": "Company", "type": "text"},
+
+        {"id": "speaker-6", "name": "Speaker #6", "type": "container"},
+        {"id": "speaker-6-img", "type": "image", "name": "Image", "data": { "max-width": 263 } },
+        {"id": "speaker-6-name", "name": "Name", "type": "text"},
+        {"id": "speaker-6-title", "name": "Title", "type": "text"},
+        {"id": "speaker-6-company", "name": "Company", "type": "text"},
+
+        {"id": "speaker-7", "name": "Speaker #7", "type": "container"},
+        {"id": "speaker-7-img", "type": "image", "name": "Image", "data": { "max-width": 263 } },
+        {"id": "speaker-7-name", "name": "Name", "type": "text"},
+        {"id": "speaker-7-title", "name": "Title", "type": "text"},
+        {"id": "speaker-7-company", "name": "Company", "type": "text"},
+
+        {"id": "speaker-8", "name": "Speaker #8", "type": "container"},
+        {"id": "speaker-8-img", "type": "image", "name": "Image", "data": { "max-width": 263 } },
+        {"id": "speaker-8-name", "name": "Name", "type": "text"},
+        {"id": "speaker-8-title", "name": "Title", "type": "text"},
+        {"id": "speaker-8-company", "name": "Company", "type": "text"},
+
+        {"id": "speakers-text-2", "name": "Text", "type": "text"},
+        {"id": "speaker-btn", "name": "Button", "type": "link", "data": {"href": "#/optin"} },
+
+
+
+        {"id": "agenda", "name": "Agenda", "type": "container"},
+        {"id": "agenda-title", "name": "Title", "type": "text"},
+        {"id": "agenda-text", "name": "Text", "type": "text"},
+        {"id": "agenda-subtitle-1", "name": "Subtitle #1", "type": "text"},
+        {"id": "agenda-list-1", "name": "List #1", "type": "text"},
+        {"id": "agenda-subtitle-2", "name": "Subtitle #2", "type": "text"},
+        {"id": "agenda-list-2", "name": "List #2", "type": "text"},
+        {"id": "agenda-disclaimer", "name": "Disclaimer", "type": "text"},
+
+
+
+        {"id": "venue", "name": "Venue", "type": "container"},
+        {"id": "venue-title-1", "name": "Title", "type": "text"},
+        {"id": "venue-left", "name": "Left Column", "type": "container"},
+        {"id": "venue-img", "type": "image", "name": "Image"},
+        {"id": "venue-right", "name": "Right Column", "type": "container"},
+        {"id": "venue-subtitle", "name": "Subtitle", "type": "text"},
+        {"id": "venue-address", "name": "Address", "type": "text"},
+        {"id": "venue-btn", "name": "Button", "type": "link" },
+        {"id": "venue-text", "name": "Text", "type": "text"},
+        {"id": "venue-link", "name": "Link", "type": "link" },
+        {"id": "hotels", "name": "Where To Stay", "type": "container"},
+        {"id": "venue-title-2", "name": "Title", "type": "text"},
+
+        {"id": "hotel-1", "name": "Location #1", "type": "container"},
+        {"id": "hotel-1-img", "type": "image", "name": "Image"},
+        {"id": "hotel-1-title", "name": "Title", "type": "text"},
+        {"id": "hotel-1-text", "name": "Name", "type": "text"},
+        {"id": "hotel-1-btn", "name": "Button", "type": "link" },
+
+        {"id": "hotel-2", "name": "Location #2", "type": "container"},
+        {"id": "hotel-2-img", "type": "image", "name": "Image"},
+        {"id": "hotel-2-title", "name": "Title", "type": "text"},
+        {"id": "hotel-2-text", "name": "Name", "type": "text"},
+        {"id": "hotel-2-btn", "name": "Button", "type": "link" },
+
+        {"id": "hotel-3", "name": "Location #3", "type": "container"},
+        {"id": "hotel-3-img", "type": "image", "name": "Image"},
+        {"id": "hotel-3-title", "name": "Title", "type": "text"},
+        {"id": "hotel-3-text", "name": "Name", "type": "text"},
+        {"id": "hotel-3-btn", "name": "Button", "type": "link" },
+
+
+
+        {"id": "sponsors", "name": "Sponsors", "type": "container"},
+        {"id": "sponsors-title", "name": "Title", "type": "text"},
+        {"id": "sponsors-text", "name": "Text", "type": "text"},
+        {"id": "sponsor-img-1", "type": "image", "name": "Image #1"},
+        {"id": "sponsor-img-2", "type": "image", "name": "Image #2"},
+        {"id": "sponsor-img-3", "type": "image", "name": "Image #3"},
+        {"id": "sponsor-img-4", "type": "image", "name": "Image #4"},
+        {"id": "sponsor-img-5", "type": "image", "name": "Image #5"},
+        {"id": "sponsor-img-6", "type": "image", "name": "Image #6"},
+        {"id": "sponsor-img-7", "type": "image", "name": "Image #7"},
+        {"id": "sponsor-img-8", "type": "image", "name": "Image #8"},
+        {"id": "sponsor-img-9", "type": "image", "name": "Image #9"},
+
+
+
+        {"id": "become", "name": "Become A Sponsor", "type": "container"},
+        {"id": "become-title", "name": "Title", "type": "text"},
+        {"id": "become-text", "name": "Text", "type": "text"},
+        {"id": "become-btn", "name": "Button", "type": "link", "data": {"href": "#/optin"} },
+
+
+
+        {"id": "registration", "name": "Registration", "type": "container"},
+        {"id": "registration-title", "name": "Title", "type": "text"},
+
+        {"id": "option-01", "name": "Option #1", "type": "container"},
+        {"id": "option-01-header", "name": "Heading", "type": "text"},
+        {"id": "option-01-title", "name": "Title", "type": "text"},
+        {"id": "option-01-price-current", "name": "Price", "type": "text"},
+        {"id": "option-01-list", "name": "List", "type": "text"},
+        {"id": "option-01-cta", "name": "Button", "type": "link", "data": {"href": "#/optin"} },
+
+        {"id": "option-02", "name": "Option #2", "type": "container"},
+        {"id": "option-02-header", "name": "Heading", "type": "text"},
+        {"id": "option-02-title", "name": "Title", "type": "text"},
+        {"id": "option-02-price-current", "name": "Price", "type": "text"},
+        {"id": "option-02-list", "name": "List", "type": "text"},
+        {"id": "option-02-cta", "name": "Button", "type": "link", "data": {"href": "#/optin"} },
+
+        {"id": "option-03", "name": "Option #3", "type": "container"},
+        {"id": "option-03-header", "name": "Heading", "type": "text"},
+        {"id": "option-03-title", "name": "Title", "type": "text"},
+        {"id": "option-03-price-current", "name": "Price", "type": "text"},
+        {"id": "option-03-list", "name": "List", "type": "text"},
+        {"id": "option-03-cta", "name": "Button", "type": "link", "data": {"href": "#/optin"} },
+
+
+
+        {"id": "faq", "name": "FAQs", "type": "container"},
+        {"id": "faq-title", "name": "Title", "type": "text"},
+
+        {"id": "faq-1", "name": "FAQ #1", "type": "container"},
+        {"id": "faq-1-title", "name": "Question", "type": "text"},
+        {"id": "faq-1-text", "name": "Answer", "type": "text"},
+
+        {"id": "faq-2", "name": "FAQ #2", "type": "container"},
+        {"id": "faq-2-title", "name": "Question", "type": "text"},
+        {"id": "faq-2-text", "name": "Answer", "type": "text"},
+
+        {"id": "faq-3", "name": "FAQ #3", "type": "container"},
+        {"id": "faq-3-title", "name": "Question", "type": "text"},
+        {"id": "faq-3-text", "name": "Answer", "type": "text"},
+
+        {"id": "faq-4", "name": "FAQ #4", "type": "container"},
+        {"id": "faq-4-title", "name": "Question", "type": "text"},
+        {"id": "faq-4-text", "name": "Answer", "type": "text"},
+
+        {"id": "faq-5", "name": "FAQ #5", "type": "container"},
+        {"id": "faq-5-title", "name": "Question", "type": "text"},
+        {"id": "faq-5-text", "name": "Answer", "type": "text"},
+
+        {"id": "faq-6", "name": "FAQ #6", "type": "container"},
+        {"id": "faq-6-title", "name": "Question", "type": "text"},
+        {"id": "faq-6-text", "name": "Answer", "type": "text"},
+
+
+
+        {"id": "footer-container", "name": "Footer", "type": "container"},
+        {"id": "footer-links", "name": "Navigation", "type": "text"},
+        {"id": "footer-link-01", "name": "Link 1 (#section1)", "type": "link"},
+        {"id": "footer-link-02", "name": "Link 2 (#section2)", "type": "link"},
+        {"id": "footer-link-03", "name": "Link 3 (#section3)", "type": "link"},
+        {"id": "footer-link-04", "name": "Link 4 (#section4)", "type": "link"},
+        {"id": "footer-link-05", "name": "Link 5 (#section5)", "type": "link"},
+        {"id": "footer-link-06", "name": "Link 6 (#section6)", "type": "link"},
+        {"id": "footer-link-07", "name": "Link 7 (#section7)", "type": "link"},
+        {"id": "footer-link-08", "name": "Link 8", "type": "link", "data": {"href": "#/optin"} },
+
+        {"id": "copyright-container", "name": "Copyright", "type": "container"},
+        {"id": "copyright-text", "name": "Text", "type": "text"},
+
+        {"id": "social-container", "name": "Social Media", "type": "container"},
+        {"id": "share-facebook", "type": "dynamic", "name": "Facebook Share", "data": { "variables": ["facebookShareURL"] } },
+        {"id": "share-twitter", "type": "dynamic", "name": "Twitter Share", "data": { "variables": ["twitterShareURL"] } },
+        {"id": "share-google", "type": "dynamic", "name": "Google+ Share", "data": { "variables": ["googleShareURL"] } },
+        {"id": "share-linkedin", "type": "dynamic", "name": "LinkedIn Share", "data": { "variables": ["linkedInShareURL"] } }
+    ],
+    "form": {}
+}
